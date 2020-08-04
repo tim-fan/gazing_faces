@@ -13,10 +13,10 @@
         args="--perspective-file $(find gazing_faces)cfg/gui.perspective"
         required="true"/>
 
-    <!-- <include file="$(find opencv_apps)/launch/face_detection.launch">
+    <include file="$(find opencv_apps)/launch/face_detection.launch">
         <arg name="image" value="/cv_camera/image_raw" />
         <arg name="debug_view" value="false"/>
-    </include> -->
+    </include>
 
     
     
