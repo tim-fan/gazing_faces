@@ -18,6 +18,6 @@
         <arg name="debug_view" value="false"/>
     </include>
 
-    
+    <node pkg="gazing_faces" name="image_recorder" type="image_recorder.py"/>
     
 </launch>
