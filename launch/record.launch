@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="cv_camera" type="cv_camera_node" name="cv_camera">
+        <param name="rate" value="1" />
+    </node>
+
+    <node pkg="gaze_tracking_ros" type="gaze_tracker.py" name="gaze_tracker">
+        <remap from="image_raw" to="cv_camera/image_raw" />
+    </node>
+    
+    <node pkg="gaze_tracking_ros" type="start_rqt.sh" name="rqt_gui" 
+        args="--perspective-file $(find gazing_faces)cfg/gui.perspective"
+        required="true"/>
+
+    <!-- <include file="$(find opencv_apps)/launch/face_detection.launch">
+        <arg name="image" value="/cv_camera/image_raw" />
+        <arg name="debug_view" value="false"/>
+    </include> -->
+
+    
+    
+</launch>
